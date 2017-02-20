@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:700,900|Fira+Sans:400,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/reset.css">
+
+    <link href="../../files/mui.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../files/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../../files/mui.min.js"></script>
+    <script src="../../files/jquery-2.1.4.min.js"></script>
+    <script src="../../files/script.js"></script>
+    <script src="../js/modernizr.js"></script>
+    <script src="../js/jquery.mobile.custom.min.js"></script>
+    <script src="../js/jtline.js"></script>
+<script type="text/javascript">
+        $(document).ready(function () {
+            var contentText = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.';
+
+            // dataRoot : '/'
+            var myMappedObject = [
+                  {
+                      "isSelected": "true",
+                      "taskTitle": "My First Point 1",
+                      "taskSubTitle": "January 16th, 2014",
+                      "assignDate": "16/01/2014",
+                      "taskShortDate": "16 Jan",
+                      "taskDetails": "hi <span style=\"color:red\">my html content</span> other text"
+                  },
+                  {
+                      "isSelected": "",
+                      "taskTitle": "My Point 2",
+                      "taskSubTitle": "February 28th, 2014",
+                      "assignDate": "28/02/2014",
+                      "taskShortDate": "28 Feb",
+                      "taskDetails": contentText
+                  },
+                  {
+                      "isSelected": "",
+                      "taskTitle": "My Point 3",
+                      "taskSubTitle": "March 20th, 2014",
+                      "assignDate": "20/04/2014",
+                      "taskShortDate": "20 Apr",
+                      "taskDetails": contentText
+                  },
+                  {
+                      "isSelected": "",
+                      "taskTitle": "My Point 4",
+                      "taskSubTitle": "May 20th, 2014",
+                      "assignDate": "20/05/2014",
+                      "taskShortDate": "20 May",
+                      "taskDetails": contentText
+                  },
+                  {
+                      "isSelected": "",
+                      "taskTitle": "My Point 5",
+                      "taskSubTitle": "July 9th, 2014",
+                      "assignDate": "09/07/2014",
+                      "taskShortDate": "09 July",
+                      "taskDetails": contentText
+                  },
+                  {
+                      "isSelected": "",
+                      "taskTitle": "My Point 6",
+                      "taskSubTitle": "August 30th, 2014",
+                      "assignDate": "30/08/2014",
+                      "taskShortDate": "30 Aug",
+                      "taskDetails": contentText
+                  },
+                  {
+                      "isSelected": "",
+                      "taskTitle": "My Point 7",
+                      "taskSubTitle": "September 15th, 2014",
+                      "assignDate": "15/09/2014",
+                      "taskShortDate": "15 Sep",
+                      "taskDetails": contentText
+                  },
+                  {
+                      "isSelected": "",
+                      "taskTitle": "My Point 8",
+                      "taskSubTitle": "November 1st, 2014",
+                      "assignDate": "01/11/2014",
+                      "taskShortDate": "01 Nov",
+                      "taskDetails": contentText
+                  },
+                  {
+                      "isSelected": "",
+                      "taskTitle": "My Point 9",
+                      "taskSubTitle": "December 10th, 2014",
+                      "assignDate": "10/12/2014",
+                      "taskShortDate": "10 Dec",
+                      "taskDetails": contentText
+                  },
+                  {
+                      "isSelected": "",
+                      "taskTitle": "My Point 10",
+                      "taskSubTitle": "January 19th, 2015",
+                      "assignDate": "19/01/2015",
+                      "taskShortDate": "29 Jan",
+                      "taskDetails": contentText
+                  },
+                  {
+                      "isSelected": "",
+                      "taskTitle": "My Point 11",
+                      "taskSubTitle": "March 3rd, 2015",
+                      "assignDate": "03/03/2015",
+                      "taskShortDate": "3 Mar",
+                      "taskDetails": contentText
+                  }
+            ];
+
+            var jtLine = $('.myjtline').jTLine({
+                callType: 'jsonObject',
+                structureObj: myMappedObject,
+                map: {
+                    "dataRoot": "/",
+                    "title": "taskTitle",
+                    "subTitle": "taskSubTitle",
+                    "dateValue": "assignDate",
+                    "pointCnt": "taskShortDate",
+                    "bodyCnt": "taskDetails"
+                },
+                formatTitle: function (title) {
+                    return '<h2><span style="color:green">' + title + '</span></h2>';
+                },
+                formatSubTitle: function (subTitle) {
+                    return '<em><span style="color:blue">' + subTitle + '</span></em>';
+                },
+                formatBodyContent: function (bodyCnt) {
+                    return '<p><span style="color:#6a6a6a">' + bodyCnt + '</span></p>';
+                }
+            });
+
+            $("#exmpl").click();
+        });
+    </script>
+
+    <style>
+        a {
+            text-decoration: none !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="sidedrawer" class="mui--no-user-select">
+        <div id="sidedrawer-brand" class="mui--appbar-line-height">
+            <span class="mui--text-title">jTLine</span>
+        </div>
+        <div class="mui-divider"></div>
+        <ul>
+            <li>
+                <a href="index.html">
+                    <strong>About</strong>
+                </a>
+            </li>
+            <li>
+                <strong id="exmpl">Examples</strong>
+                <ul>
+                    <li><a href="example-tech-event.html">Tech Event Demo</a></li>
+                    <li><a href="ajax.html">Ajax</a></li>
+                    <li><a href="jsonobject.html">jSon Object</a></li>
+                    <li><a href="root.html">Data Root</a></li>
+                    <li><a href="mode.html">Distance Mode</a></li>
+                    <li><a href="mapped.html">Mapped Object</a></li>
+                    <li><a href="format.html">Format Ui</a></li>
+                    <li><a href="event.html">Events</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="https://github.com/naadydev/jTLine">
+                    <strong>Download / Clone</strong>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <header id="header">
+        <div class="mui-appbar mui--appbar-line-height">
+            <div class="mui-container-fluid">
+                <a class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer">☰</a>
+                <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer">☰</a>
+                <span class="mui--text-title mui--visible-xs-inline-block mui--visible-sm-inline-block">Brand.io</span>
+            </div>
+        </div>
+    </header>
+    <div id="content-wrapper">
+        <div class="mui--appbar-height"></div>
+        <div class="mui-container-fluid">
+            <br>
+            <h1>Examples: Format Ui Objects</h1>
+            <p>
+                You can change / format ui objects 
+            </p>
+            <pre>
+                var jtLine = $('.myjtline').jTLine({
+                callType: 'jsonObject',
+                structureObj: myObject,                
+                formatTitle: function (title) {
+                    return ' < h2 > ' + title + ' < / h2 > ';
+                },
+                formatSubTitle: function (subTitle) {
+                    return '< em >' + subTitle + ' < / em> ';
+                },
+                formatBodyContent: function (bodyCnt) {
+                    return ' < p > ' + bodyCnt + '< / p >';
+                }
+            });
+            </pre>
+            
+            <p>
+                <div class="myjtline">
+                </div>
+            </p>
+<br /><br /><br /><br />
+        </div>
+    </div>
+    <footer id="footer">
+        <div class="mui-container-fluid">
+            <br /> Made with ♥
+            <br />
+            <a href="https://twitter.com/naadydev" target="_blink">@naadydev</a>
+        </div>
+    </footer>
+</body>
+
+</html>
