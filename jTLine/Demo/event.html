@@ -22,7 +22,7 @@
     <script src="../js/modernizr.js"></script>
     <script src="../js/jquery.mobile.custom.min.js"></script>
     <script src="../js/jtline.js"></script>
-
+    <link href="./../../files/pre.css" rel="stylesheet" type="text/css" />
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -137,6 +137,22 @@
             });
 
             $("#exmpl").click();
+
+            // --------------------
+            $('i[rel="pre"]').replaceWith(function () {
+                return $('<pre><code>' + $(this).html() + '</code></pre>');
+            });
+            var pres = document.querySelectorAll('pre,kbd,blockquote');
+            for (var i = 0; i < pres.length; i++) {
+                pres[i].addEventListener("dblclick", function () {
+                    var selection = getSelection();
+                    var range = document.createRange();
+                    range.selectNodeContents(this);
+                    selection.removeAllRanges();
+                    selection.addRange(range);
+                }, false);
+            }
+            // -------------------
         });
     </script>
     <style>
@@ -173,7 +189,7 @@
                 </ul>
             </li>
             <li>
-               <a href="https://github.com/naadydev/jTLine">
+                <a href="https://github.com/naadydev/jTLine">
                     <strong>Download / Clone</strong>
                 </a>
             </li>
@@ -193,27 +209,70 @@
         <div class="mui-container-fluid">
             <br>
             <h1>Examples: Events</h1>
-           <pre>
-               var jtLine = $('.myjtline').jTLine({
-                callType: 'jsonObject',
-                structureObj: myObject,                
-                onPointClick: function (e) {
-                    console.log(e);
-                }
-            });
-           </pre>
-            
-                <div class="myjtline">
-                </div>        
+            <div class="myjtline">
+            </div>
+            <!-- ------------------------------------ -->
+            <div id='wrapper'>
+                <pre class='code code-html'><label>HTML</label>
+                <code>                   
+                   &lt; div class="myjtline" &gt; &lt;/ div &gt;
+                </code>
+                </pre>
+                <pre class='code code-jquery'><label>Jquery</label>
+                <code>
+                     $('.myjtline').jTLine({
+                         callType: 'jsonObject',
+                         structureObj: myObject,                
+                         onPointClick: function (e) {
+                              console.log(e);
+                         }
+                     });
+                </code>
+                </pre>
+
+                <pre class='code code-javascript'><label>JSON</label>
+                <code>
+             // dataRoot : '/'
+            var jsonObject = [
+                {
+                    "isSelected": "true",
+                    "taskTitle": "My First Point 1",
+                    "taskSubTitle": "January 16th, 2014",
+                    "assignDate": "16/01/2014",
+                    "taskShortDate": "16 Jan",
+                    "taskDetails": "hi &lt;span style="color:red"&gt; my html content &lt;/span&gt; other text"
+                },
+                {
+                    "isSelected": "",
+                    "taskTitle": "My Point 2",
+                    "taskSubTitle": "February 28th, 2014",
+                    "assignDate": "28/02/2014",
+                    "taskShortDate": "28 Feb",
+                    "taskDetails": contentText
+                },
+                {
+                    "isSelected": "",
+                    "taskTitle": "My Point 3",
+                    "taskSubTitle": "March 20th, 2014",
+                    "assignDate": "20/04/2014",
+                    "taskShortDate": "20 Apr",
+                    "taskDetails": contentText
+                }];
+                </code>
+                </pre>
+               
+
+
+            </div>
+             <!-- ------------------------------------ -->
         </div>
-    </div>
-    <footer id="footer">
-        <div class="mui-container-fluid">
-            <br /> Made with ♥
-            <br />
-            <a href="https://twitter.com/naadydev" target="_blink">@naadydev</a>
-        </div>
-    </footer>
+        <footer id="footer">
+            <div class="mui-container-fluid">
+                <br /> Made with ♥
+                <br />
+                <a href="https://twitter.com/naadydev" target="_blink">@naadydev</a>
+            </div>
+        </footer>
 </body>
 
 </html>

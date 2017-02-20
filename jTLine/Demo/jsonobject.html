@@ -22,7 +22,7 @@
     <script src="../js/modernizr.js"></script>
     <script src="../js/jquery.mobile.custom.min.js"></script>
     <script src="../js/jtline.js"></script>
-
+    <link href="./../../files/pre.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript">
         $(document).ready(function () {
             var contentText = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.';
@@ -33,7 +33,7 @@
                 "dataArray": [
                     {
                         "isSelected": "true",
-                        "title": "My First Point 1",
+                        "title": "My  Point 1",
                         "subTitle": "subTitle11111",
                         "dateValue": "10:12", // 10:12
                         "pointCnt": "p1",
@@ -41,7 +41,7 @@
                     },
                     {
                         "isSelected": "",
-                        "title": "My First Point 2",
+                        "title": "My  Point 2",
                         "subTitle": "subTitle222222",
                         "dateValue": "15:12", // 12:11
                         "pointCnt": "p2",
@@ -49,7 +49,7 @@
                     },
                     {
                         "isSelected": "",
-                        "title": "My First Point 3",
+                        "title": "My  Point 3",
                         "subTitle": "subTitle33333",
                         "dateValue": "35:12", // 12:11
                         "pointCnt": "p3",
@@ -57,7 +57,7 @@
                     },
                     {
                         "isSelected": "",
-                        "title": "My First Point 3",
+                        "title": "My  Point 3",
                         "subTitle": "subTitle33333",
                         "dateValue": "89:12", // 12:11
                         "pointCnt": "p4",
@@ -133,15 +133,32 @@
             <p>
                 You Can Build The TimeLine by Passing Json Object
             </p>
-            <pre>
-                var myjSonObject = {
+            <div class="myjtline"></div>
+            <!-- ------------------------------------ -->
+            <div id='wrapper'>
+                <pre class='code code-html'><label>HTML</label>
+                <code>                   
+                   &lt; div class="myjtline" &gt; &lt;/ div &gt;
+                </code>
+                </pre>
+                <pre class='code code-jquery'><label>Jquery</label>
+                <code>
+                 $('.myjtline').jTLine({
+                       callType: 'jsonObject',
+                       structureObj: myjSonObject
+                  });
+                </code>
+                </pre>
+                <pre class='code code-javascript'><label>JSON</label>
+                <code>
+            var myjSonObject = {
                 "args": {
 
                 },
                 "dataArray": [
                   {
                       "isSelected": "true",
-                      "title": "My First Point 1",
+                      "title": "My  Point 1",
                       "subTitle": "subTitle11111",
                       "dateValue": "10:12", // 10:12
                       "pointCnt": "p1",
@@ -149,23 +166,17 @@
                   },
                   {
                       "isSelected": "",
-                      "title": "My First Point 2",
+                      "title": "My  Point 2",
                       "subTitle": "subTitle222222",
                       "dateValue": "15:12", // 12:11
                       "pointCnt": "p2",
                       "bodyCnt": contentText
                   }]
             }
-
-            var jtLine = $('.myjtline').jTLine({
-                callType: 'jsonObject',
-                structureObj: myjSonObject
-            });
-            </pre>
-            <br>
-            <div class="myjtline">
+                </code>
+                </pre>
             </div>
-            <br /> <br />
+            <!-- ------------------------------------ -->
         </div>
     </div>
     <footer id="footer">

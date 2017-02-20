@@ -22,6 +22,7 @@
     <script src="../js/modernizr.js"></script>
     <script src="../js/jquery.mobile.custom.min.js"></script>
     <script src="../js/jtline.js"></script>
+      <link href="./../../files/pre.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript">
         $(document).ready(function () {
             var contentText = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.';
@@ -192,7 +193,35 @@ $("#exmpl").click();
             <p>
                 You can Mapp the Data Object Properties
             </p>
-            <pre>
+            <p>
+                <div class="myjtline">
+                </div>
+            </p>
+             <!-- ------------------------------------ -->
+            <div id='wrapper'>
+                <pre class='code code-html'><label>HTML</label>
+                <code>                   
+                   &lt; div class="myjtline" &gt; &lt;/ div &gt;
+                </code>
+                </pre>
+                <pre class='code code-jquery'><label>Jquery</label>
+                <code>
+                 $('.myjtline').jTLine({
+                     callType: 'jsonObject',
+                     structureObj: myMappedObject,
+                     map: {
+                        "dataRoot": "/",
+                        "title": "taskTitle",
+                        "subTitle": "taskSubTitle",
+                        "dateValue": "assignDate",
+                        "pointCnt": "taskShortDate",
+                        "bodyCnt": "taskDetails"
+                    }
+                 });
+                </code>
+                </pre>
+                <pre class='code code-javascript'><label>JSON</label>
+                <code>
             // dataRoot : '/'
             var myMappedObject = [                
                 {
@@ -211,24 +240,12 @@ $("#exmpl").click();
                     "taskShortDate": "20 Apr",
                     "taskDetails": contentText
                 }];
-
-            var jtLine = $('.myjtline').jTLine({
-                callType: 'jsonObject',
-                structureObj: myMappedObject,
-                map: {
-                    "dataRoot": "/",
-                    "title": "taskTitle",
-                    "subTitle": "taskSubTitle",
-                    "dateValue": "assignDate",
-                    "pointCnt": "taskShortDate",
-                    "bodyCnt": "taskDetails"
-                }
-            });
-            </pre>
-            <p>
-                <div class="myjtline">
-                </div>
-            </p>
+                </code>
+                </pre>
+            </div>
+            <!-- ------------------------------------ -->
+            
+            
 
         </div>
     </div>

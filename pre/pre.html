@@ -6,6 +6,7 @@
 
     <script>
         $(function () {
+            // --------------------
             $('i[rel="pre"]').replaceWith(function () {
                 return $('<pre><code>' + $(this).html() + '</code></pre>');
             });
@@ -19,6 +20,7 @@
                     selection.addRange(range);
                 }, false);
             }
+            // -------------------
         });
     </script>
 </head>
