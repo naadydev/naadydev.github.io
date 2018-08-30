@@ -1,0 +1,2 @@
+http-server [path] [options]
+http-server -p 8080

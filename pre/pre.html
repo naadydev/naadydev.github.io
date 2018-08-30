@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <script src="./../files/jquery-2.1.4.min.js"></script>
+    <link href="./../files/pre.css" rel="stylesheet" type="text/css" />
+
+    <script>
+        $(function () {
+            // --------------------
+            $('i[rel="pre"]').replaceWith(function () {
+                return $('<pre><code>' + $(this).html() + '</code></pre>');
+            });
+            var pres = document.querySelectorAll('pre,kbd,blockquote');
+            for (var i = 0; i < pres.length; i++) {
+                pres[i].addEventListener("dblclick", function () {
+                    var selection = getSelection();
+                    var range = document.createRange();
+                    range.selectNodeContents(this);
+                    selection.removeAllRanges();
+                    selection.addRange(range);
+                }, false);
+            }
+            // -------------------
+        });
+    </script>
+</head>
+
+<body>
+    <div id='wrapper'>
+        <pre class='code code-html'><label>HTML</label><code>&lt;button&gt;Press Me!&lt;/button&gt;</code></pre>
+
+        <pre class='code code-css'><label>CSS</label><code>button {
+  width:20px;
+  height:28px;
+  color:#fff;
+  font-size:28px;
+  padding:11px 15px;
+  border-radius:5px;
+  background:#14ADE5;
+}</code></pre>
+
+        <pre class='code code-javascript'><label>JS</label><code>&lt;button onclick="myFunction()"&gt;Post&lt;/button&gt;
+
+&lt;script&gt;
+function myFunction() {
+    document.write(5 + 6);
+}
+&lt;/script&gt;</code></pre>
+
+        <pre class='code code-jquery'><label>Jquery</label><code>$(document).ready(function{
+ jQuery.cssRule(".post", "display", "block");
+});</code></pre>
+        <div>
+</body>
+
+</html>
